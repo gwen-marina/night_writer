@@ -1,9 +1,10 @@
-# $ ruby ./lib/night_writer.rb message.txt braille.txt
-# Created 'braille.txt' containing 256 characters
+input_file = File.open(ARGV[0], "r") #("r") is an argument that allows the file to be read
+message_reader = input_file.read.delete("\n") #this is telling Ruby to read the File
+input_file.close #everytime you open a file, you have to close it
+chars = message_reader.length
 
+writer = File.open(ARGV[1], "w")
+writer.write(message_reader)
+writer.close
 
-# Create a Ruby program that prints the sample line of text provided above no matter what arguments are provided from the command line.
-# Update your existing program so that the name of the file that it prints out changes based on the second input that the user provides
-# from the command line.
-# Further update your program so that the number of characters it prints out changes based on the number of characters in the file that
-# the user provides as the first argument that the user provides from the command line.
+puts "Created '#{ARGV[1]}' containing #{chars} characters"
