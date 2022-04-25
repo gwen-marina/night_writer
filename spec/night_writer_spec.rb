@@ -19,4 +19,9 @@ RSpec.describe NightWriter do
     expect(@nw.output_file.read).to eq ("0.\n..\n..\n")
   end
 
+  it "puts a message to a screen" do
+    expect(@night_writer.puts_message).to eq(nil)
+
+  end
+
 end
