@@ -13,10 +13,24 @@ class NightWriter
 
   def output_file_writer
     dictionary = Dictionary.new
-    dictionary_hash = dictionary.create_alphabet[message_reader]
-    dictionary_hash.each do |symbol|
-      output_file.write("#{symbol}\n")
+    braille_alpha = []
+    message_reader.split("").each do |letter|
+      braille_alpha << dictionary.create_alphabet[letter]
+      require'pry'; binding.pry
     end
+    output_file.write(formater(braille_alpha))
+  end
+
+  def formater(braille_array)
+   column1 = []
+   column2 = []
+   column3 = []
+   braille_array.each do |array|
+     column1.push(array[0].to_s)
+     column2.push(array[1].to_s)
+     column3.push(array[2].to_s)
+    end
+   "#{column1.join}\n#{column2.join}\n#{column3.join}\n"
   end
 
   def puts_message
