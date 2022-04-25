@@ -21,7 +21,6 @@ RSpec.describe NightWriter do
 
   it "puts a message to a screen" do
     expect(@night_writer.puts_message).to eq(nil)
-
   end
 
 end
