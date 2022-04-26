@@ -21,15 +21,15 @@ class NightWriter
   end
 
   def formater(braille_array)
-   first = []
-   second = []
-   third = []
-   braille_array.each do |array|
-     first.push(array[0].to_s)
-     second.push(array[1].to_s)
-     third.push(array[2].to_s)
+    first = []
+    second = []
+    third = []
+    braille_array.each do |array|
+      first.push(array[0].to_s)
+      second.push(array[1].to_s)
+      third.push(array[2].to_s)
     end
-   "#{first.join}\n#{second.join}\n#{third.join}\n"
+    "#{first.join}\n#{second.join}\n#{third.join}\n"
   end
 
   def puts_message
