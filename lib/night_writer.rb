@@ -16,21 +16,20 @@ class NightWriter
     braille_alpha = []
     message_reader.split("").each do |letter|
       braille_alpha << dictionary.create_alphabet[letter]
-      require'pry'; binding.pry
     end
     output_file.write(formater(braille_alpha))
   end
 
   def formater(braille_array)
-   column1 = []
-   column2 = []
-   column3 = []
+   first = []
+   second = []
+   third = []
    braille_array.each do |array|
-     column1.push(array[0].to_s)
-     column2.push(array[1].to_s)
-     column3.push(array[2].to_s)
+     first.push(array[0].to_s)
+     second.push(array[1].to_s)
+     third.push(array[2].to_s)
     end
-   "#{column1.join}\n#{column2.join}\n#{column3.join}\n"
+   "#{first.join}\n#{second.join}\n#{third.join}\n"
   end
 
   def puts_message
