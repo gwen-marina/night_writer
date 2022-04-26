@@ -1,8 +1,5 @@
 class Dictionary
 
-  def initialize
-  end
-
   def create_alphabet
     {
       "a" => ["0.", "..", ".."],
